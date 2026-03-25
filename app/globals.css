@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* サイバーパンク背景 */
+.bg-cyber {
+  background: linear-gradient(135deg, #1a0033 0%, #0a0a0a 50%, #001a1a 100%);
+}
+
+/* ネオンライン（水平方向にスクロール） */
+.neon-line {
+  position: absolute;
+  height: 1px;
+  width: 200%;
+  background: linear-gradient(90deg, transparent, #06B6D4, transparent);
+  animation: scroll-left var(--speed) linear infinite;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes scroll-bg {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes coin-spin {
+  from { transform: translate(-50%, -50%) rotateY(0deg); }
+  to { transform: translate(-50%, -50%) rotateY(360deg); }
+}
+
+@keyframes coin-collect {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes score-pulse {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1.0); }
+}
+
+@keyframes game-over-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes tap-hint {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+/* 全画面ゲーム用 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

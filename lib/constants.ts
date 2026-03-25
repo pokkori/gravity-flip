@@ -1,0 +1,15 @@
+export const HERO_SIZE = 16;             // px
+export const HERO_X_PERCENT = 20;        // 画面左から20%
+export const HERO_GROUND_Y = 80;         // 重力down時のY%
+export const HERO_CEILING_Y = 20;        // 重力up時のY%
+export const FLIP_DURATION = 0.15;       // 秒
+export const TRAIL_LENGTH = 5;           // 残像フレーム数
+export const OBSTACLE_WIDTH_PERCENT = 15;// 画面幅の15%
+export const INITIAL_OBSTACLE_INTERVAL = 120; // フレーム（2秒@60fps）
+export const MIN_OBSTACLE_INTERVAL = 48;      // フレーム（0.8秒@60fps）
+export const INITIAL_SPEED = 3;          // px/frame
+export const MAX_SPEED_MULTIPLIER = 3.0;
+export const COIN_SIZE = 12;             // px
+export const COIN_SCORE = 3;
+export const COIN_SPAWN_CHANCE = 0.3;
+export const INVERT_FLASH_DURATION = 100;// ms
