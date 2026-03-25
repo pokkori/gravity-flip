@@ -58,11 +58,15 @@ export default function Home() {
       {phase === 'title' && (
         <div
           className="absolute inset-0 z-50 flex flex-col items-center justify-center cursor-pointer"
+          role="button"
+          tabIndex={0}
+          aria-label="重力反転ゲームを開始する。タップまたはクリックしてください"
           style={{
             background: 'linear-gradient(135deg, #1a0033 0%, #0a0a0a 50%, #001a1a 100%)',
           }}
           onTouchStart={handleStart}
           onMouseDown={handleStart}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStart(); }}
         >
           <h1
             className="text-5xl font-bold mb-4 tracking-wider"

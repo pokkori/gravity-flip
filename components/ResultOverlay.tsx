@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
+import Link from 'next/link';
 import { shareResult } from '@/lib/share';
 
 interface ResultOverlayProps {
@@ -87,7 +88,8 @@ export default function ResultOverlay({ score, highScore, isNewRecord, onRestart
 
       {/* シェアボタン */}
       <button
-        className="mb-6 px-6 py-3 rounded-lg font-bold text-white"
+        className="mb-6 px-6 py-3 rounded-lg font-bold text-white min-h-[44px] min-w-[44px]"
+        aria-label={copied ? 'スコアをコピーしました' : 'スコアをシェアする'}
         style={{
           backgroundColor: '#06B6D4',
           boxShadow: '0 0 15px #06B6D4',
@@ -105,6 +107,15 @@ export default function ResultOverlay({ score, highScore, isNewRecord, onRestart
       >
         TAP TO RETRY
       </p>
+
+      {/* フッターリンク */}
+      <div className="absolute bottom-4 text-xs text-center" style={{ color: 'rgba(255,255,255,0.3)' }}>
+        <Link href="/legal" className="hover:underline" aria-label="特定商取引法に基づく表記" onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}>特定商取引法</Link>
+        {' / '}
+        <Link href="/privacy" className="hover:underline" aria-label="プライバシーポリシー" onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}>プライバシーポリシー</Link>
+        {' / '}
+        <Link href="/terms" className="hover:underline" aria-label="利用規約" onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}>利用規約</Link>
+      </div>
     </div>
   );
 }
